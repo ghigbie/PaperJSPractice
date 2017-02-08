@@ -165,56 +165,21 @@
 				color: '#2c3e50'
 			}
 		}
-		
-		var keys1 = [q, w, e, r, t, y, u, i, o, p];
-		var keys2 = [a, s, d, f, g, h, j, k, l, \;,];
-		var keyObjects = [];
 
-
-		for(int a = 0; a > keys1.length; a++){
-			keys[a] ": { color: \"red\",
-						  sound: new Howl({
-						  	src: ['sounds/clay.mp3']
-						  })
-						  }"
-
-		}
 
 		var circles = []; 
 
-		var sound = new Howl({
- 		 src: ['sounds/bubbles.mp3']
-		});
-
-		var sound2 = new Howl({
- 		 src: ['sounds/clay.mp3']
-		});
-
-
-
-
-		function onKeyDown(event){
-
+		function onKeyDown(event){ <!--if there is a key pressed in one of the keys above, then execut-->
+			if(keyData[event.key]){
 			var maxPoint = new Point(view.size.width, view.size.height);
 			var randomPoint = Point.random();
 			var point = maxPoint * randomPoint;
 
 			var newCircle = new Path.Circle(point, 500);
-
-
-<!-- 			if(event.key === "a"){
-				sound.play();
-				newCircle.fillColor = "#2c3e50"
-			}
-			else if(event.key === "s"){
-				sound2.play();
-				newCircle.fillColor = "#16a085"
-			}else{
-			    newCircle.fillColor = "red";
-			} -->
+			newCircle.fillColor = keyData[event.key].color; <!--the color is set by keyData[event.key].color-->
+			var sound = keyData[event.key].sound;
 
 			circles.push(newCircle);
-
 			console.log(point);
 			console.log(view.size.height);
 			console.log(view.size.width);

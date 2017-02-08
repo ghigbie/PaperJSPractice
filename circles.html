@@ -4,7 +4,14 @@
 	<title>PaperJS Practice</title>
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	<script type="text/javascript" src="paper-full.js"></script>
-	<script type="text/paperscript" canvas="canvas"></script>
+	<script type="text/paperscript" canvas="canvas">
+		var path = new Path();
+		path.strokeColor = "green";
+		var start = new Point(100, 100);
+		path.moveTo(start);
+		path.lineTo(start + [100, 50]);
+
+	</script>
 </head>
 <body>
 

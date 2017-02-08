@@ -6,24 +6,7 @@
 	<script type="text/javascript" src="paper-full.js"></script>
 	<script type="text/paperscript" canvas="canvas">
 
-		var path = new Path();
-		path.strokeColor = "red";
-		var start = new Point(10, 100);
-		path.moveTo(start);
-		path.lineTo(start + [700, 50]);
 
-
-		var myCircle = new Path.Circle(new Point(200, 70), 50);
-		myCircle.fillColor = 'blue';
-
-		var circle2 = new Path.Circle(new Point(400, 200), 100);
-		circle2.fillColor ="purple";
-
-		for(var x = 0; x < 1000; x+=100){
-			for(var y = 0; y < 1000; y+= 100){
-				new Path.Circle(new Point(x, y), 30).fillColor = "blue";
-			}
-		}
 
 		var circles = []; 
 
@@ -32,7 +15,7 @@
 			var randomPoint = Point.random();
 			var point = maxPoint * randomPoint;
 
-			var newCircle = new Path.Circle(point, 30);
+			var newCircle = new Path.Circle(point, 500);
 			newCircle.fillColor = "red";
 			circles.push(newCircle);
 

@@ -6,10 +6,15 @@
 	<script type="text/javascript" src="paper-full.js"></script>
 	<script type="text/paperscript" canvas="canvas">
 		var path = new Path();
-		path.strokeColor = "green";
-		var start = new Point(100, 100);
+		path.strokeColor = "red";
+		var start = new Point(10, 100);
 		path.moveTo(start);
-		path.lineTo(start + [100, 50]);
+		path.lineTo(start + [700, 50]);
+
+
+		var myCircle = new Path.Circle(new Point(200, 70), 50);
+		myCircle.fillColor = 'blue';
+
 
 	</script>
 </head>

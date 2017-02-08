@@ -5,10 +5,6 @@
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	<script type="text/javascript" src="paper-full.js"></script>
 	<script type="text/paperscript" canvas="canvas">
-		var maxPoint = new Point(view.size.width, view.size.height);
-		var randomPoint = Point.random();
-		var point = maxPoint * randomPoint;
-
 
 		var path = new Path();
 		path.strokeColor = "red";
@@ -30,6 +26,10 @@
 		}
 
 		function onKeyDown(event){
+			var maxPoint = new Point(view.size.width, view.size.height);
+			var randomPoint = Point.random();
+			var point = maxPoint * randomPoint;
+
 			new Path.Circle(point, 50).fillColor = "red";
 			console.log(point);
 			console.log(view.size.height);
